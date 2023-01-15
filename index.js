@@ -56,6 +56,12 @@ inquirer
         },
         {
             type: 'list',
+            message: 'Please select a license.',
+            name: 'license',
+            choices: ['ISC', 'MIT', 'Apache 2.0 License', 'Eclipse Public License 1.0'],
+        },
+        {
+            type: 'list',
             message: 'What is your preferred method of communication?',
             name: 'contact',
             choices: ['email', 'phone', 'telekinesis'],
@@ -77,11 +83,31 @@ inquirer
     });
 
 // // TODO: Create a function to write README file
-const writeToFile = (filename, { title, description, installationinstructions, usage, contact, username, email }) => {
-    const myreadme = `# ${title}
+const writeToFile = (filename, { title, description, installationinstructions, usage, license, contact, username, email }) => {
+
+    var selectedLicense;
+
+    switch (license) {
+        case 'ISC':
+            selectedLicense = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+            break;
+        case 'MIT':
+            selectedLicense = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+            break;
+        case 'Apache 2.0 License':
+            selectedLicense = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+            break;
+        case 'Eclipse Public License 1.0':
+            selectedLicense = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
+            break;            
+        default:
+            selectedLicense = 'No license was selected';
+    }
+
+    const myreadme = `# ${title}                       
 
 ## Description
-${ description }
+${description}
     
 ## Table of Contents
 - [Installation](#installation)
@@ -94,18 +120,20 @@ ${installationinstructions}
 ## Usage
 ${usage}
 
+## License
+${selectedLicense}
+
 ## Contact
 ${contact}
 
 ## Questions
 https://github.com/${username}
 
-For any additional questions email me at :${email}
+For any additional questions email me at : ${email}
 
 `
-
     fs.writeFile(filename, myreadme, (err) =>
-            err ? console.log(err) : console.log('Success!')
+        err ? console.log(err) : console.log('Success!')
     );
 }
 
