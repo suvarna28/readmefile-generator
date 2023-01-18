@@ -3,28 +3,32 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // Function that writes the content entered by user to the README file
-const writeToFile = (filename, { title, description, installationinstructions, usage, license, username, email }) => {
+const writeToFile = (filename, { title, description, installationinstructions, usage, contributing, tests, license, username, email }) => {
 
     var selectedLicense;
 
     switch (license) {
         case 'ISC':
-            selectedLicense = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+            selectedLicense = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)'
+                + ',' + 'The application is covered under ISC License';
             break;
         case 'MIT':
-            selectedLicense = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+            selectedLicense = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+                + ',' + 'The application is covered under MIT License';
             break;
         case 'Apache 2.0 License':
-            selectedLicense = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+            selectedLicense = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+                + ',' + 'The application is covered under Apache-2.0 License';
             break;
         case 'Eclipse Public License 1.0':
-            selectedLicense = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
+            selectedLicense = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
+                + ',' + 'The application is covered under EPL-1.0 License';
             break;            
         default:
             selectedLicense = 'No license was selected';
     }
 
-    const myreadme = `# ${title}                       
+    const myreadme = `# ${title}       ${selectedLicense.split(',')[0]}                   
 
 ## Description
 ${description}
@@ -32,7 +36,10 @@ ${description}
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [Contact](#contact)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
 
 ## Installation 
 ${installationinstructions}
@@ -40,8 +47,14 @@ ${installationinstructions}
 ## Usage
 ${usage}
 
+## Contributing
+${contributing}
+
+## Tests
+${tests}
+
 ## License
-${selectedLicense}
+${selectedLicense.split(',')[1]}
 
 ## Questions
 https://github.com/${username}
