@@ -1,28 +1,62 @@
-// TODO: Include packages needed for this application
+// Packages required by the application
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// TODO: Create an array of questions for user input
-const questions = [];
+// Function that writes the content entered by user to the README file
+const writeToFile = (filename, { title, description, installationinstructions, usage, license, username, email }) => {
 
-// GIVEN a command-line application that accepts user input
-// WHEN I am prompted for information about my application repository
-// THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
-// WHEN I enter my project title
-// THEN this is displayed as the title of the README
-// WHEN I enter a description, installation instructions, usage information, contribution guidelines, and test instructions
-// THEN this information is added to the sections of the README entitled Description, Installation, Usage, Contributing, and Tests
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-// WHEN I enter my GitHub username
-// THEN this is added to the section of the README entitled Questions, with a link to my GitHub profile
-// https://github.com/suvarna28
-// WHEN I enter my email address
-// THEN this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
+    var selectedLicense;
 
-inquirer
+    switch (license) {
+        case 'ISC':
+            selectedLicense = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
+            break;
+        case 'MIT':
+            selectedLicense = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+            break;
+        case 'Apache 2.0 License':
+            selectedLicense = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+            break;
+        case 'Eclipse Public License 1.0':
+            selectedLicense = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
+            break;            
+        default:
+            selectedLicense = 'No license was selected';
+    }
+
+    const myreadme = `# ${title}                       
+
+## Description
+${description}
+    
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contact](#contact)
+
+## Installation 
+${installationinstructions}
+
+## Usage
+${usage}
+
+## License
+${selectedLicense}
+
+## Questions
+https://github.com/${username}
+
+For any additional questions email me at : ${email}
+
+`
+    fs.writeFile(filename, myreadme, (err) =>
+        err ? console.log(err) : console.log('Success!')
+    );
+}
+
+// Function that uses inquirer package's prompt method to ask a series of questions to the users to create the README file
+function init() { 
+    inquirer
     .prompt([
         {
             type: 'input',
@@ -61,12 +95,6 @@ inquirer
             choices: ['ISC', 'MIT', 'Apache 2.0 License', 'Eclipse Public License 1.0'],
         },
         {
-            type: 'list',
-            message: 'What is your preferred method of communication?',
-            name: 'contact',
-            choices: ['email', 'phone', 'telekinesis'],
-        },
-        {
             type: 'input',
             name: 'username',
             message: 'What is your GitHub username?',
@@ -81,65 +109,8 @@ inquirer
         const filename = 'README.md';
         writeToFile(filename, data);
     });
-
-// // TODO: Create a function to write README file
-const writeToFile = (filename, { title, description, installationinstructions, usage, license, contact, username, email }) => {
-
-    var selectedLicense;
-
-    switch (license) {
-        case 'ISC':
-            selectedLicense = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)';
-            break;
-        case 'MIT':
-            selectedLicense = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
-            break;
-        case 'Apache 2.0 License':
-            selectedLicense = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
-            break;
-        case 'Eclipse Public License 1.0':
-            selectedLicense = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)';
-            break;            
-        default:
-            selectedLicense = 'No license was selected';
-    }
-
-    const myreadme = `# ${title}                       
-
-## Description
-${description}
-    
-## Table of Contents
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contact](#contact);
-
-## Installation 
-${installationinstructions}
-
-## Usage
-${usage}
-
-## License
-${selectedLicense}
-
-## Contact
-${contact}
-
-## Questions
-https://github.com/${username}
-
-For any additional questions email me at : ${email}
-
-`
-    fs.writeFile(filename, myreadme, (err) =>
-        err ? console.log(err) : console.log('Success!')
-    );
 }
 
-// // TODO: Create a function to initialize app
-// function init() { }
-
-// // Function call to initialize app
-// init();
+// Function call that initializes the app
+init();
 
