@@ -1,7 +1,7 @@
-# dsfs       [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)                   
+# asa       ![License](https://img.shields.io/badge/License-EPL_1.0-blue.svg)                   
 
 ## Description
-sdfs
+as
     
 ## Table of Contents
 - [Installation](#installation)
@@ -12,22 +12,22 @@ sdfs
 - [Questions](#questions)
 
 ## Installation 
-sdfs
+as
 
 ## Usage
-fds
+as
 
 ## Contributing
-fsdf
+as
 
 ## Tests
-sdfsdf
+as
 
 ## License
-The application is covered under Apache-2.0 License
+The application is covered under EPL-1.0 License
 
 ## Questions
-https://github.com/fdsfs
+https://github.com/as
 
-For any additional questions email me at : sdfs
+For any additional questions email me at : as
 
