@@ -36,9 +36,9 @@ https://drive.google.com/file/d/1o6CIYlietJsJESKAmDwC572fNQ-kwwXf/view
 
 ## Credits
 
-* Out TA, Sebastian for answering homework related doubts. 
+* Our TA, Sebastian for answering homework related doubts. 
 * @lukas-h github, for learning how to add license to the file.
-* Shields.io for learning how to add license to the file.
+* Shields.io for learning how to add badge to the file.
 * Claire Lee and MaSandra Ewing, for letting me know that we have to use the starter code in generateMarkdown.js file. 
 
 
