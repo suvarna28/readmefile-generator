@@ -17,14 +17,14 @@ None for now
 ## Usage
 It's invoked using 'node index.js' command
 
-## License
-The application is covered under MIT License
-
 ## Contributing
 None for now
 
 ## Tests
 None for now
+
+## License
+The application is covered under MIT License
 
 ## Questions
 https://github.com/suvarna28

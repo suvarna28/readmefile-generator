@@ -18,9 +18,9 @@ ${description}
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Contributing](#contributing)
 - [Tests](#tests)
+- [License](#license)
 - [Questions](#questions)
 
 ## Installation 
@@ -29,14 +29,14 @@ ${installationinstructions}
 ## Usage
 ${usage}
 
-## License
-${licenseNote}
-
 ## Contributing
 ${contributing}
 
 ## Tests
 ${tests}
+
+## License
+${licenseNote}
 
 ## Questions
 https://github.com/${username}
