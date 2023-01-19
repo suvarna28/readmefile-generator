@@ -44,7 +44,12 @@ N/A
 
 https://github.com/suvarna28/readmefile-generator
 
+## Link to the walkthrough video demonstrating the functionality of the application
+
+https://drive.google.com/file/d/1o6CIYlietJsJESKAmDwC572fNQ-kwwXf/view
+
 ## Credits
 
 * Out TA, Sebastian for answering homework related doubts. 
+* GitHub and Shields.io for learning how to add license to the file.
 

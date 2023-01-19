@@ -1,7 +1,7 @@
-# sa ![License](https://img.shields.io/badge/License-ISC-yellow.svg)                   
+# README File Generator ![License](https://img.shields.io/badge/License-Apache_2.0-red.svg)                   
 
 ## Description
-as
+Generates a readme file
     
 ## Table of Contents
 - [Installation](#installation)
@@ -12,22 +12,22 @@ as
 - [Questions](#questions)
 
 ## Installation 
-as
+None for now
 
 ## Usage
-as
-
-## Contributing
-asa
-
-## Tests
-sa
+To generate readme file and it's invoked using node index.js commnd
 
 ## License
-The application is covered under ISC License
+The application is covered under Apache-2.0 License
+
+## Contributing
+none for now
+
+## Tests
+none for now
 
 ## Questions
-https://github.com/as
+https://github.com/suvarna28
 
-For any additional questions email me at : as
+For any additional questions email me at : jadhav.suvarna28@gmail.com
 

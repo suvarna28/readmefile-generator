@@ -1,34 +1,16 @@
 // Packages required by the application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // Function that creates the README file and writes the content entered by the user to the file
 const writeToFile = (filename, { title, description, installationinstructions, usage, contributing, tests, license, username, email }) => {
 
-    var selectedLicense;
-    
-    switch (license) {
-        case 'ISC':
-            selectedLicense = '![License](https://img.shields.io/badge/License-ISC-yellow.svg)'
-                + ',' + 'The application is covered under ISC License';
-            break;
-        case 'MIT':
-            selectedLicense = '![License](https://img.shields.io/badge/License-MIT-yellowgreen.svg)'
-                + ',' + 'The application is covered under MIT License';
-            break;
-        case 'Apache 2.0 License':
-            selectedLicense = '![License](https://img.shields.io/badge/License-Apache_2.0-red.svg)'
-                + ',' + 'The application is covered under Apache-2.0 License';
-            break;
-        case 'Eclipse Public License 1.0':
-            selectedLicense = '![License](https://img.shields.io/badge/License-EPL_1.0-blue.svg)'
-                + ',' + 'The application is covered under EPL-1.0 License';
-            break;            
-        default:
-            selectedLicense = 'No license was selected';
-    }
+    var selectedLicense = generateMarkdown.renderLicenseLink(license);
 
-    const myreadme = `# ${title} ${selectedLicense.split(',')[0]}                   
+    var licenseNote = generateMarkdown.renderLicenseSection(license);
+
+    const myreadme = `# ${title} ${selectedLicense}                   
 
 ## Description
 ${description}
@@ -47,14 +29,14 @@ ${installationinstructions}
 ## Usage
 ${usage}
 
+## License
+${licenseNote}
+
 ## Contributing
 ${contributing}
 
 ## Tests
 ${tests}
-
-## License
-${selectedLicense.split(',')[1]}
 
 ## Questions
 https://github.com/${username}
