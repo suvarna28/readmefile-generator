@@ -28,7 +28,7 @@ const writeToFile = (filename, { title, description, installationinstructions, u
             selectedLicense = 'No license was selected';
     }
 
-    const myreadme = `# ${title}       ${selectedLicense.split(',')[0]}                   
+    const myreadme = `# ${title} ${selectedLicense.split(',')[0]}                   
 
 ## Description
 ${description}
@@ -69,8 +69,7 @@ For any additional questions email me at : ${email}
 
 // Function that uses inquirer package's prompt method to ask a series of questions to the users to create the README file
 function init() { 
-    inquirer
-    .prompt([
+    inquirer.prompt([
         {
             type: 'input',
             name: 'title',
@@ -119,7 +118,7 @@ function init() {
         },
     ])
     .then((data) => {
-        const filename = 'README.md';
+        const filename = './Output/README.md';
         writeToFile(filename, data);
     });
 }
