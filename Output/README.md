@@ -1,7 +1,7 @@
 # README File Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)                   
 
 ## Description
-Generates a readme file based on user input values
+Generates a readme file based on user input
     
 ## Table of Contents
 - [Installation](#installation)
@@ -15,7 +15,7 @@ Generates a readme file based on user input values
 None for now
 
 ## Usage
-It's invoked using 'node index.js' command
+it's invoked using the 'node index.js' command
 
 ## Contributing
 None for now

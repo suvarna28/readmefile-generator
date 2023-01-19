@@ -32,7 +32,7 @@ https://github.com/suvarna28/readmefile-generator
 
 ## Link to the walkthrough video demonstrating the functionality of the application
 
-https://drive.google.com/file/d/1o6CIYlietJsJESKAmDwC572fNQ-kwwXf/view
+https://drive.google.com/file/d/1AfDaUT49VaZ-_wWV5Og2mlCbJNYD4_K4/view?usp=share_link
 
 ## Credits
 
