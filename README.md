@@ -51,5 +51,7 @@ https://drive.google.com/file/d/1o6CIYlietJsJESKAmDwC572fNQ-kwwXf/view
 ## Credits
 
 * Out TA, Sebastian for answering homework related doubts. 
-* GitHub and Shields.io for learning how to add license to the file.
+* @lukas-h github, for learning how to add license to the file.
+* Shields.io for learning how to add license to the file.
+
 

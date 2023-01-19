@@ -6,7 +6,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 // Function that creates the README file and writes the content entered by the user to the file
 const writeToFile = (filename, { title, description, installationinstructions, usage, contributing, tests, license, username, email }) => {
 
-    var selectedLicense = generateMarkdown.renderLicenseLink(license);
+    var selectedLicense = generateMarkdown.renderLicenseBadge(license) + '' + generateMarkdown.renderLicenseLink(license);
 
     var licenseNote = generateMarkdown.renderLicenseSection(license);
 

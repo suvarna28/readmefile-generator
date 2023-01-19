@@ -1,19 +1,40 @@
-//Function that creates the license link based on selected license
+//Function to create the badge based on selected license
+function renderLicenseBadge(license) {
+  var badge;
+  switch (license) {
+    case 'ISC':
+      badge = '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)]';
+        break;
+    case 'MIT':
+      badge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]';
+        break;
+    case 'Apache 2.0 License':
+      badge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]';
+        break;
+    case 'Eclipse Public License 1.0':
+      badge = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)]';
+        break;            
+    default:
+      badge = '';
+  }
+  return badge; 
+}
 
+//Function that creates the license link based on selected license
 function renderLicenseLink(license) {
   var selectedLicense;
   switch (license) {
     case 'ISC':
-      selectedLicense = '![License](https://img.shields.io/badge/License-ISC-yellow.svg)';
+      selectedLicense = '(https://opensource.org/licenses/ISC)';
         break;
     case 'MIT':
-      selectedLicense = '![License](https://img.shields.io/badge/License-MIT-yellowgreen.svg)';
+      selectedLicense = '(https://opensource.org/licenses/MIT)';
         break;
     case 'Apache 2.0 License':
-      selectedLicense = '![License](https://img.shields.io/badge/License-Apache_2.0-red.svg)';
+      selectedLicense = '(https://opensource.org/licenses/Apache-2.0)';
         break;
     case 'Eclipse Public License 1.0':
-      selectedLicense = '![License](https://img.shields.io/badge/License-EPL_1.0-blue.svg)';
+      selectedLicense = '(https://opensource.org/licenses/EPL-1.0)';
         break;            
     default:
         selectedLicense = '';
@@ -21,8 +42,7 @@ function renderLicenseLink(license) {
   return selectedLicense; 
 }
 
-// Function that creates the license note to add under 'License' section based on license selected
-
+// Function that creates the license note to add under 'License' section based on selected license
 function renderLicenseSection(license) {
   var licenseNote;
   switch (license) {
@@ -45,6 +65,7 @@ function renderLicenseSection(license) {
 }
 
 module.exports = { 
+  renderLicenseBadge,
   renderLicenseLink,
   renderLicenseSection
 };

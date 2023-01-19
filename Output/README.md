@@ -1,7 +1,7 @@
-# README File Generator ![License](https://img.shields.io/badge/License-Apache_2.0-red.svg)                   
+# README File Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)                   
 
 ## Description
-Generates a readme file
+Generates a readme file based on user input values
     
 ## Table of Contents
 - [Installation](#installation)
@@ -15,16 +15,16 @@ Generates a readme file
 None for now
 
 ## Usage
-To generate readme file and it's invoked using node index.js commnd
+It's invoked using 'node index.js' command
 
 ## License
-The application is covered under Apache-2.0 License
+The application is covered under MIT License
 
 ## Contributing
-none for now
+None for now
 
 ## Tests
-none for now
+None for now
 
 ## Questions
 https://github.com/suvarna28
